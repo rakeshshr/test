@@ -6,10 +6,16 @@ var express = require('express'),
     User = require('./models/user'),
     session = require('express-session');
 
+mongoose.connect(
+  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost/gigs_around_me' // plug in the db name you've been using
+);
+
     
 
 // connect to mongodb
-mongoose.connect('mongodb://localhost/gigs_around_me');
+//mongoose.connect('mongodb://localhost/gigs_around_me');
 
 // middleware
 app.use(bodyParser.urlencoded({extended: true}));

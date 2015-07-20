@@ -22,6 +22,9 @@ app.use(session({
   cookie: { maxAge: 60000 }
 }));
 
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/public/views/index.html');
+})
 
 
 

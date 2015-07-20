@@ -60,6 +60,7 @@ module.exports = Log;user currently logged in based on `session.userId`
 });
 
 // STATIC ROUTES
+app.use(express.static(__dirname + '/public'));
 
 // root route
 app.get('/', function (req, res) {

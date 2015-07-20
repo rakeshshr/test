@@ -6,6 +6,12 @@ var express = require('express'),
     User = require('./models/user'),
     session = require('express-session');
 
+    mongoose.connect(
+  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost/fun-around-us' // plug in the db name you've been using
+);
+
 // connect to mongodb
 mongoose.connect('mongodb://localhost/gigs_around_me');
 
@@ -116,33 +122,5 @@ app.post('/api/logs', function (req, res) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // listen on port 3000
-app.listen(3000, function () {
-  console.log('server started on localhost:3000');
-});
+app.listen(process.env.PORT || 3000);

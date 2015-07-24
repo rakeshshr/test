@@ -1,0 +1,21 @@
+Sign Up
+    // grab the pwd
+    // make var user = { email: , password: }
+    // post user to server
+    // app.post('/signup',)
+    // var newUser = User(req.body)
+    // User.createSecure(newUser)
+    // res.send(user)
+Login
+	- same as signup but with 'login'
+	//
+
+check if logged in
+	- $.get('api/user/current')
+
+Tests
+	- npm i mocha chai request --save-dev
+	- make test/test.js
+	- describe 1 test 
+
+Styling
